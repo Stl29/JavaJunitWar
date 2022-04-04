@@ -2,8 +2,9 @@ pipeline {
   agent any
   stages {
     stage('Prepare') {
+      agent any
       steps {
-        git(url: 'git@github.com:Stl29/JavaJunitWar.git', branch: 'main')
+        git(url: 'https://github.com/Stl29/JavaJunitWar.git', branch: 'main')
       }
     }
 
