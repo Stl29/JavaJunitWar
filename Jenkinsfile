@@ -9,8 +9,16 @@ pipeline {
     }
 
     stage('build') {
+      agent any
       steps {
-        sh 'echo "hello word bis"'
+        sh 'mvn clean install'
+      }
+    }
+
+    stage('test') {
+      agent any
+      steps {
+        sh 'mvn clean test'
       }
     }
 
